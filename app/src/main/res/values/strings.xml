@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Prueba Tecniva</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="general_accept">Aceptar</string>
+
+    <!-- Dialog movies -->
+    <string name="dialog_movies_title">Título de la película:</string>
+    <string name="dialog_movies_adult">Es para Adultos:</string>
+    <string name="dialog_movies_original_language">Lenguaje original:</string>
+    <string name="dialog_movies_original_title">Título original:</string>
+    <string name="dialog_movies_overview">Reseña:</string>
+    <string name="dialog_movies_release_date">Fecha de estreno:</string>
+    <string name="dialog_movies_rating">Popularidad:</string>
+    <string name="dialog_movies_vote">Votos:</string>
+    <string name="yes">Si</string>
+    <string name="not">No</string>
+</resources>

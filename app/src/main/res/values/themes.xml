@@ -1,0 +1,85 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.PruebaTecniva" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorAccent</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_variant</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="AppThemeNoTitleBarAndTransparent" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:screenOrientation">sensorPortrait</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="CustomDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="CustomDialogInfo" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/info_background_dialog</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Titles">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/text_error_size_title</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="InfoMessage">
+        <item name="android:textColor">@color/secondary_variant</item>
+        <item name="android:textSize">@dimen/text_error_size_msg</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="LabelTitle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/dimen_10dp</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_14dp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/item_label_text_size</item>
+    </style>
+
+    <style name="LabelContent" parent="LabelTitle">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="ChipNormal">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="chipBackgroundColor">@color/colorPrimary</item>
+        <item name="chipStrokeColor">@color/colorPrimaryDark</item>
+        <item name="chipStrokeWidth">@dimen/dimen_2dp</item>
+    </style>
+
+    <style name="ChipInverted" parent="ChipNormal">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="chipBackgroundColor">@color/colorPrimaryDark</item>
+        <item name="chipStrokeColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="Banner">
+        <item name="android:layout_height">@dimen/banner_height</item>
+        <item name="android:layout_width">@dimen/banner_witdh</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+</resources>

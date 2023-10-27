@@ -1,0 +1,104 @@
+[versions]
+#Core
+corektxVersion                 = "1.12.0"
+multidexVersion                = "2.0.1"
+reflectVersion                 = "1.9.0"
+#Hilt
+hiltVersion                    = "2.48"
+hiltCompilerVersion            = "2.48"
+#GUI
+appCompatVersion               = "1.6.1"
+materialVersion                = "1.9.0"
+constraintLayoutVersion        = "2.1.4"
+activityktxVersion             = "1.7.2"
+navFragmentVersion             = "2.7.3"
+navUIVersion                   = "2.7.3"
+lottieVersion                  = "6.1.0"
+#Glide
+glideVersion                   = "4.16.0"
+glideCompilerVersion           = "4.16.0"
+#lifecycle
+livedataVersion                = "2.6.2"
+viewModelVersion               = "2.6.2"
+workVersion                    = "2.8.1"
+#retrofit
+retrofitVersion                = "2.9.0"
+coroutineAdapterVersion        = "0.9.2"
+loggingInterceptorVersion      = "5.0.0-alpha.7"
+#firebase
+fireAnalyticsVersion           = "21.3.0"
+fireBomVersion                 = "32.3.1"
+fireFirestoreVersion           = "24.8.1"
+fireStorageVersion             = "20.2.1"
+fireCrashlyticsVersion         = "18.4.3"
+firePerfVersion                = "20.4.1"
+#room
+roomVersion                    = "2.5.2"
+roomCoroutinesVersion          = "2.1.0-alpha04"
+roomCompilerVersion            = "2.5.2"
+#testing
+junitVersion                   = "4.13.2"
+espressoVersion                = "3.5.1"
+extJunitVersion                = "1.1.5"
+#plugins
+gradleVersion                  = "8.1.2"
+kotlinVersion                  = "1.9.0"
+googleServicesVersion          = "4.4.0"
+crashlyticsVersion             = "2.9.5"
+hiltPluginVersion              = "2.48"
+performanceVersion             = "1.4.2"
+kspVersion                     = "1.9.0-1.0.13"
+
+[libraries]
+#Core
+androidxKtx             = { group = "androidx.core",                name = "core-ktx",                                  version.ref = "corektxVersion" }
+multidex                = { group = "androidx.multidex",            name = "multidex",                                  version.ref = "multidexVersion" }
+reflect                 = { group = "org.jetbrains.kotlin",         name = "kotlin-reflect",                            version.ref = "reflectVersion" }
+#Hilt
+hilt                    = { group = "com.google.dagger",            name = "hilt-android",                              version.ref = "hiltVersion" }
+hiltCompiler            = { group = "com.google.dagger",            name = "hilt-compiler",                             version.ref = "hiltCompilerVersion" }
+#GUI
+appCompat               = { group = "androidx.appcompat",           name = "appcompat",                                 version.ref = "appCompatVersion" }
+material                = { group = "com.google.android.material",  name = "material",                                  version.ref = "materialVersion" }
+constraintLayout        = { group = "androidx.constraintlayout",    name = "constraintlayout",                          version.ref = "constraintLayoutVersion" }
+activityktx             = { group = "androidx.activity",            name = "activity-ktx",                              version.ref = "activityktxVersion" }
+navFragment             = { group = "androidx.navigation",          name = "navigation-fragment",                       version.ref = "navFragmentVersion" }
+navUI                   = { group = "androidx.navigation",          name = "navigation-ui-ktx",                         version.ref = "navUIVersion" }
+lottie                  = { group = "com.airbnb.android",           name = "lottie",                                    version.ref = "lottieVersion" }
+#Glide
+glide                   = { group = "com.github.bumptech.glide",    name = "glide",                                     version.ref="glideVersion" }
+glideCompiler           = { group = "com.github.bumptech.glide",    name = "compiler",                                  version.ref="glideCompilerVersion" }
+#lifecycle
+livedata                = { group = "androidx.lifecycle",           name = "lifecycle-livedata-ktx",                    version.ref = "livedataVersion"}
+viewModel               = { group = "androidx.lifecycle",           name = "lifecycle-viewmodel-ktx",                   version.ref = "viewModelVersion" }
+work                    = { group = "androidx.work",                name = "work-runtime-ktx",                          version.ref = "workVersion"}
+#retrofit
+retrofit                = { group = "com.squareup.retrofit2",       name = "retrofit",                                  version.ref = "retrofitVersion" }
+retrofitConverter       = { group = "com.squareup.retrofit2",       name = "converter-gson",                            version.ref = "retrofitVersion" }
+retrofitXMLConverter    = { group = "com.squareup.retrofit2",       name = "converter-simplexml",                       version.ref = "retrofitVersion" }
+coroutineAdapter        = { group = "com.jakewharton.retrofit",     name = "retrofit2-kotlin-coroutines-adapter",       version.ref = "coroutineAdapterVersion" }
+loggingInterceptor      = { group = "com.squareup.okhttp3",         name = "logging-interceptor",                       version.ref = "loggingInterceptorVersion" }
+#firebase
+fireAnalytics           = { group = "com.google.firebase",          name = "firebase-analytics-ktx",                    version.ref = "fireAnalyticsVersion" }
+fireBom                 = { group = "com.google.firebase",          name = "firebase-bom",                              version.ref = "fireBomVersion" }
+fireFirestore           = { group = "com.google.firebase",          name = "firebase-firestore-ktx",                    version.ref = "fireFirestoreVersion" }
+fireStorage             = { group = "com.google.firebase",          name = "firebase-storage-ktx",                      version.ref = "fireStorageVersion" }
+fireCrashlytics         = { group = "com.google.firebase",          name = "firebase-crashlytics-ktx",                  version.ref = "fireCrashlyticsVersion" }
+firePerformance         = { group = "com.google.firebase",          name = "firebase-perf-ktx",                         version.ref = "firePerfVersion" }
+#room
+room                    = { group = "androidx.room",                name = "room-ktx",                                  version.ref = "roomVersion" }
+roomCompiler            = { group = "androidx.room",                name = "room-compiler",                             version.ref = "roomCompilerVersion" }
+#testing
+junit                   = { group = "junit",                        name = "junit",                                     version.ref = "junitVersion" }
+extJunit                = { group = "androidx.test.ext",            name = "junit",                                     version.ref = "extJunitVersion" }
+espresso                = { group = "androidx.test.espresso",       name = "espresso-core",                             version.ref = "espressoVersion" }
+
+[plugins]
+gradle                  = { id = "com.android.application",                     version.ref = "gradleVersion" }
+kotlin                  = { id = "org.jetbrains.kotlin.android",                version.ref = "kotlinVersion" }
+googleServices          = { id = "com.google.gms.google-services",              version.ref = "googleServicesVersion" }
+crashlyticsPlugin       = { id = "com.google.firebase.crashlytics",             version.ref = "crashlyticsVersion" }
+hiltPlugin              = { id = "com.google.dagger.hilt.android",              version.ref = "hiltPluginVersion" }
+performance             = { id = "com.google.firebase.firebase-perf",           version.ref = "performanceVersion" }
+ksp                     = { id = "com.google.devtools.ksp",                     version.ref = "kspVersion" }
+libraryAndroid          = { id = "com.android.library",                         version.ref = "gradleVersion" }
