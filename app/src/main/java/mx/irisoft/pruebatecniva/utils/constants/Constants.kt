@@ -15,3 +15,7 @@ const val KEY = BuildConfig.MDB_KEY
 const val API_KEY = "api_key"
 const val LANGUAGE = "language"
 const val PAGE = "page"
+
+//Constants Hilt provider MDBApi
+const val CLIENT_MDB            = "clientMDB"
+const val RETROFIT_MDB          = "retrofitMDB"
