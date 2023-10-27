@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import mx.irisoft.pruebatecniva.databinding.FragmentMoviesBinding
 import mx.irisoft.pruebatecniva.presentation.base.FragmentBase
 
+@AndroidEntryPoint
 class MoviesFragment : FragmentBase() {
 
     private var _binding: FragmentMoviesBinding? = null

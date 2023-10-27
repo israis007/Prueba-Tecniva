@@ -11,6 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import mx.irisoft.pruebatecniva.R
 import mx.irisoft.pruebatecniva.databinding.FragmentSearchBinding
 import mx.irisoft.pruebatecniva.presentation.base.FragmentBase
+import mx.irisoft.pruebatecniva.presentation.main.MainActivity
 
 @AndroidEntryPoint
 class SearchFragment : FragmentBase() {
@@ -21,6 +22,7 @@ class SearchFragment : FragmentBase() {
     // onDestroyView.
     private val binding get() = _binding!!
     private val viewModel: SearchViewModel by viewModels()
+    private lateinit var activity: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,9 +35,9 @@ class SearchFragment : FragmentBase() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        activity = requireActivity() as MainActivity
         val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
-        activity.setSupportActionBar(toolbar)
+//        activity.setSupportActionBar(toolbar)
     }
 
     override fun setListeners() {

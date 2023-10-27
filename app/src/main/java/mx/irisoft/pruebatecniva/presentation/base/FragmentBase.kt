@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 abstract class FragmentBase : Fragment() {
 
     abstract fun setListeners()
@@ -12,11 +14,8 @@ abstract class FragmentBase : Fragment() {
     abstract fun removeObservers()
     abstract fun initViewComponents()
 
-    lateinit var activity: ActivityBase
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        activity = requireActivity() as ActivityBase
         initViewComponents()
         setListeners()
         setObservers()
