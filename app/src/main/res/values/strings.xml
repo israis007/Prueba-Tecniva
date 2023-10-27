@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Prueba Tecniva</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Búsqueda</string>
+    <string name="title_dashboard">Películas</string>
     <string name="general_accept">Aceptar</string>
 
     <!-- Dialog movies -->
@@ -16,4 +15,5 @@
     <string name="dialog_movies_vote">Votos:</string>
     <string name="yes">Si</string>
     <string name="not">No</string>
+    <string name="search">Buscar...</string>
 </resources>
