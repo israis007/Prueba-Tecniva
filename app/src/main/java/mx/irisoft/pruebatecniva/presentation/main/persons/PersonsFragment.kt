@@ -38,7 +38,7 @@ class PersonsFragment : FragmentBase(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getPopularPersons(nextPage)
+        viewModel.login()
     }
 
     override fun setListeners() {
@@ -52,6 +52,20 @@ class PersonsFragment : FragmentBase(){
 
     override fun setObservers() {
         with(viewModel) {
+            session.observe(viewLifecycleOwner) {
+                val resource = it ?: return@observe
+                activity.showLoading(false)
+                when(resource.statusType){
+                    StatusType.SUCCESS -> {
+                        if (resource.data == true)
+                            viewModel.getPopularPersons(nextPage)
+                        else
+                            activity.showInfoMessage(getString(R.string.title_error), resource.message)
+                    }
+                    StatusType.ERROR -> activity.showInfoMessage(getString(R.string.title_error), resource.message)
+                    StatusType.LOADING -> activity.showLoading(true)
+                }
+            }
             listPersons.observe(viewLifecycleOwner) { it ->
                 val list = it ?: return@observe
                 activity.showLoading(false)
@@ -74,6 +88,7 @@ class PersonsFragment : FragmentBase(){
     override fun removeObservers() {
         with(viewModel) {
             listPersons.removeObservers(viewLifecycleOwner)
+            session.removeObservers(viewLifecycleOwner)
         }
     }
 

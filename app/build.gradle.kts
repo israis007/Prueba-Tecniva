@@ -2,7 +2,10 @@ plugins {
     alias(libs.plugins.gradle)
     alias(libs.plugins.kotlin)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.googleServices)
+    alias(libs.plugins.crashlyticsPlugin)
     alias(libs.plugins.hiltPlugin)
+    alias(libs.plugins.performance)
 }
 
 android {
@@ -45,6 +48,8 @@ android {
             buildConfigField("String", "DATE_FORMAT_INPUT", "\"yyyy-MM-dd\"")
             buildConfigField("String", "MONEY_FORMAT", "\"$###,####,###,###,###,##0.00\"")
             buildConfigField("String", "DECIMAL_FORMAT", "\"###,##0.00\"")
+            buildConfigField("String", "USER_FB", "\"israis007@gmail.com\"")
+            buildConfigField("String", "PASS_FB", "\"Ikaros007\"")
         }
         debug {
             isMinifyEnabled = false
@@ -60,6 +65,8 @@ android {
             buildConfigField("String", "DATE_FORMAT_INPUT", "\"yyyy-MM-dd\"")
             buildConfigField("String", "MONEY_FORMAT", "\"$###,####,###,###,###,##0.00\"")
             buildConfigField("String", "DECIMAL_FORMAT", "\"###,##0.00\"")
+            buildConfigField("String", "USER_FB", "\"israis007@gmail.com\"")
+            buildConfigField("String", "PASS_FB", "\"Ikaros007\"")
         }
     }
 }
@@ -81,6 +88,14 @@ dependencies {
     implementation(libs.navFragment)
     implementation(libs.navUI)
     implementation(libs.lottie)
+    //Firebase
+    implementation(libs.fireAuth)
+    implementation(libs.fireAnalytics)
+    implementation(platform(libs.fireBom))
+    implementation(libs.fireCrashlytics)
+    implementation(libs.fireFirestore)
+    implementation(libs.fireStorage)
+    implementation(libs.firePerformance)
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofitConverter)

@@ -4,19 +4,26 @@ import mx.irisoft.pruebatecniva.BuildConfig
 
 
 //Args between activities
-const val ARG_EXTRAS = "argsExtras"
+const val ARG_EXTRAS        = "argsExtras"
 
 //Const retrofit
 //Local Vars
-const val ENDPOINT = "${BuildConfig.BASE_URL}/3"
-const val KEY = BuildConfig.MDB_KEY
+const val ENDPOINT          = "${BuildConfig.BASE_URL}/3"
+const val KEY       = BuildConfig.MDB_KEY
 
 //Query fields
-const val API_KEY = "api_key"
-const val LANGUAGE = "language"
-const val PAGE = "page"
+const val API_KEY           = "api_key"
+const val LANGUAGE          = "language"
+const val PAGE              = "page"
 
 //Constants Hilt provider MDBApi
 const val CLIENT_MDB            = "clientMDB"
 const val RETROFIT_MDB          = "retrofitMDB"
 const val LANGUAGE_MDB          = "es-MX"
+
+//Constants Firebase
+const val DIRECTORY_IMAGES      = "ImagesPruebaTecnica"
+const val COLLECTION_STORAGE    = "PruebaTecnica"
+
+//RequestCode
+const val RQC                   = 1
