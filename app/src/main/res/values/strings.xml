@@ -34,6 +34,9 @@
     <string name="item_label_movies">Participaciones:</string>
     <string name="item_chip_favorites">Agregar Favoritos</string>
 
+    <!-- Toast Messages -->
+    <string name="toast_movie_added">La película: %1$s ha sido agregada a Favoritas.</string>
+
     <!-- Generic-->
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>

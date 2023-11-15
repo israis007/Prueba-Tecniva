@@ -12,7 +12,8 @@ object MovieMapper {
             title = this.title,
             author = this.author,
             date =  this.date.timeInMillis,
-            content = this.content
+            content = this.content,
+            imagePath = this.imagePath
         )
 
     fun MovieLocal.map() =
@@ -23,6 +24,7 @@ object MovieMapper {
             date = Calendar.getInstance().apply {
                 timeInMillis = this@map.date
             },
-            content = this.content
+            content = this.content,
+            imagePath = this.imagePath
         )
 }

@@ -10,5 +10,5 @@ data class PopularMovieItemModel(
     val originalTitle: String,
     val description: String,
     val releaseDate: String,
-    val imagePath: String
+    val imagePath: String,
 )

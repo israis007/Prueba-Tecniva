@@ -27,3 +27,6 @@ const val COLLECTION_STORAGE    = "PruebaTecnica"
 
 //RequestCode
 const val RQC                   = 1
+
+//Const Room
+const val AUTHOR                = "Israel Ramirez"

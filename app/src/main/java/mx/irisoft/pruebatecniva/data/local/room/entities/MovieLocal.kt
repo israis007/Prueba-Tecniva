@@ -9,5 +9,6 @@ data class MovieLocal(
     val title: String,
     val author: String,
     val date: Long = System.currentTimeMillis(),
-    val content: String
+    val content: String,
+    val imagePath: String
 )
