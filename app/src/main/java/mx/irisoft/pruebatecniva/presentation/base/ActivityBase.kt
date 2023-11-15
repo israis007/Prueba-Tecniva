@@ -13,11 +13,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import mx.irisoft.pruebatecniva.BuildConfig
 import mx.irisoft.pruebatecniva.R
-import mx.irisoft.pruebatecniva.data.remote.datasource.KnowFor
 import mx.irisoft.pruebatecniva.databinding.DialogImageBinding
 import mx.irisoft.pruebatecniva.databinding.DialogInfoBinding
 import mx.irisoft.pruebatecniva.databinding.DialogMovieBinding
+import mx.irisoft.pruebatecniva.domain.models.KnowForModel
 import mx.irisoft.pruebatecniva.utils.constants.ARG_EXTRAS
 
 abstract class ActivityBase : AppCompatActivity() {
@@ -115,7 +116,7 @@ abstract class ActivityBase : AppCompatActivity() {
         dialog.create().show()
     }
 
-    fun showMovieMessage(knowFor: KnowFor) {
+    fun showMovieMessage(knowFor: KnowForModel) {
         val dialog = AlertDialog.Builder(this@ActivityBase, R.style.CustomDialogInfo)
         val vm = ViewModelProvider(this@ActivityBase)[DialogViewModel::class.java]
         val binding: DialogMovieBinding = DataBindingUtil.inflate(
@@ -145,23 +146,23 @@ abstract class ActivityBase : AppCompatActivity() {
             itemActvReview.text = knowFor.overview
         }
 
-//        lifecycleScope.launch(Dispatchers.Main) {
-//            Glide.with(this@ActivityBase)
-//                .load("${BuildConfig.URL_IMGS}${knowFor.backdrop_path}")
-//                .optionalFitCenter()
-//                .placeholder(R.drawable.ic_sand_clock)
-//                .error(R.drawable.ic_no_photo)
-//                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-//                .into(binding.aivBackdrop)
-//
-//            Glide.with(this@ActivityBase)
-//                .load("${BuildConfig.URL_IMGS}${knowFor.poster_path}")
-//                .optionalFitCenter()
-//                .placeholder(R.drawable.ic_sand_clock)
-//                .error(R.drawable.ic_no_photo)
-//                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-//                .into(binding.aivPoster)
-//        }
+        lifecycleScope.launch(Dispatchers.Main) {
+            Glide.with(this@ActivityBase)
+                .load("${BuildConfig.URL_IMGS}${knowFor.backdropPath}")
+                .optionalFitCenter()
+                .placeholder(R.drawable.ic_sand_clock)
+                .error(R.drawable.ic_no_photo)
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .into(binding.aivBackdrop)
+
+            Glide.with(this@ActivityBase)
+                .load("${BuildConfig.URL_IMGS}${knowFor.posterPath}")
+                .optionalFitCenter()
+                .placeholder(R.drawable.ic_sand_clock)
+                .error(R.drawable.ic_no_photo)
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .into(binding.aivPoster)
+        }
         dialog.create().show()
     }
 

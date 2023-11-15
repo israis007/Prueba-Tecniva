@@ -1,4 +1,4 @@
-package mx.irisoft.pruebatecniva.presentation.main.search
+package mx.irisoft.pruebatecniva.presentation.main.moviesfavorites
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,19 +9,19 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import mx.irisoft.pruebatecniva.R
-import mx.irisoft.pruebatecniva.databinding.FragmentSearchBinding
+import mx.irisoft.pruebatecniva.databinding.FragmentMoviesFavoritesBinding
 import mx.irisoft.pruebatecniva.presentation.base.FragmentBase
 import mx.irisoft.pruebatecniva.presentation.main.MainActivity
 
 @AndroidEntryPoint
-class SearchFragment : FragmentBase() {
+class MoviesFavoritesFragment : FragmentBase() {
 
-    private var _binding: FragmentSearchBinding? = null
+    private var _binding: FragmentMoviesFavoritesBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private val viewModel: SearchViewModel by viewModels()
+    private val viewModel: MoviesFavoritesViewModel by viewModels()
     private lateinit var activity: MainActivity
 
     override fun onCreateView(
@@ -29,7 +29,7 @@ class SearchFragment : FragmentBase() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSearchBinding.inflate(inflater, container, false)
+        _binding = FragmentMoviesFavoritesBinding.inflate(inflater, container, false)
         return binding.root
     }
 

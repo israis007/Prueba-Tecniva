@@ -3,18 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_search">
+    app:startDestination="@+id/navigation_people">
 
     <fragment
-        android:id="@+id/navigation_search"
-        android:name="mx.irisoft.pruebatecniva.presentation.main.search.SearchFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_search" />
+        android:id="@+id/navigation_people"
+        android:name="mx.irisoft.pruebatecniva.presentation.main.persons.PersonsFragment"
+        android:label="@string/title_persons"
+        tools:layout="@layout/fragment_persons" />
 
     <fragment
         android:id="@+id/navigation_movies"
         android:name="mx.irisoft.pruebatecniva.presentation.main.movies.MoviesFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_movies"
         tools:layout="@layout/fragment_movies" />
+
+    <fragment
+        android:id="@+id/navigation_movies_favorites"
+        android:name="mx.irisoft.pruebatecniva.presentation.main.moviesfavorites.MoviesFavoritesFragment"
+        android:label="@string/title_movies_favorites"
+        tools:layout="@layout/fragment_movies_favorites" />
+
+    <fragment
+        android:id="@+id/navigation_notes"
+        android:name="mx.irisoft.pruebatecniva.presentation.main.notes.NotesFragment"
+        android:label="@string/title_notes"
+        tools:layout="@layout/fragment_notes" />
+
+    <fragment
+        android:id="@+id/navigation_upload_images"
+        android:name="mx.irisoft.pruebatecniva.presentation.main.upload.UploadImagesFragment"
+        android:label="@string/title_upload_images"
+        tools:layout="@layout/fragment_upload_images" />
 
 </navigation>

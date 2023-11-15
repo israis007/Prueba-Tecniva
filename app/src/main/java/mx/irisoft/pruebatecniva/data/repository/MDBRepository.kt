@@ -16,36 +16,34 @@ class MDBRepository @Inject constructor(
 ) {
 
     suspend fun getMovies(
-        language: String = LANGUAGE_MDB,
         page: Int,
         response: (popularMoviesResponse: Resource<PopularMoviesResponse>) -> Unit
     ) {
         response(Resource.loading())
         try {
-            val temp = providesAPI.mbdAPI(retrofit).getPopularMovies(language = language, page = page)
+            val temp = providesAPI.mbdAPI(retrofit).getPopularMovies(language = LANGUAGE_MDB, page = page)
             if (temp.isSuccessful && temp.code() == 200)
                 response(Resource.success(temp.body()!!))
             else
                 response(Resource.error("No se pudo comunicar con el servidor de MBD"))
         } catch (e: Exception) {
-            response(Resource.error("No se pudo comunicar con el servidor de MBD"))
+            response(Resource.error("Error interno: ${e.message}"))
         }
     }
 
     suspend fun getPopularPerson(
-        language: String = LANGUAGE_MDB,
         page: Int,
         response: (popularPersonsResponse: Resource<PopularPersonsResponse>) -> Unit
     ){
         response(Resource.loading())
         try {
-            val temp = providesAPI.mbdAPI(retrofit).getPopularPersons(language = language, page = page)
+            val temp = providesAPI.mbdAPI(retrofit).getPopularPersons(language = LANGUAGE_MDB, page = page)
             if (temp.isSuccessful && temp.code() == 200)
                 response(Resource.success(temp.body()!!))
             else
                 response(Resource.error("No se pudo comunicar con el servidor de MBD"))
         } catch (e: Exception){
-            response(Resource.error("No se pudo comunicar con el servidor de MBD"))
+            response(Resource.error("Error interno: ${e.message}"))
         }
     }
 

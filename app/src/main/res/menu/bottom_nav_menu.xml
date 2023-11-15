@@ -2,13 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_search"
-        android:icon="@drawable/ic_search"
-        android:title="@string/title_home" />
+        android:id="@+id/navigation_people"
+        android:icon="@drawable/ic_emoji_people"
+        android:title="@string/title_persons" />
 
     <item
         android:id="@+id/navigation_movies"
         android:icon="@drawable/ic_movies"
-        android:title="@string/title_dashboard" />
+        android:title="@string/title_movies" />
 
+    <item
+        android:id="@+id/navigation_movies_favorites"
+        android:icon="@drawable/ic_star"
+        android:title="@string/title_movies" />
+
+    <item
+        android:id="@+id/navigation_notes"
+        android:icon="@drawable/ic_note_add"
+        android:title="@string/title_notes" />
+
+    <item
+        android:id="@+id/navigation_upload_images"
+        android:icon="@drawable/ic_cloud_upload"
+        android:title="@string/title_upload_images" />
 </menu>
