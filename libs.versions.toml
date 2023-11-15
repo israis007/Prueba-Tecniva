@@ -2,17 +2,17 @@
 #Core
 corektxVersion                 = "1.12.0"
 multidexVersion                = "2.0.1"
-reflectVersion                 = "1.9.0"
+reflectVersion                 = "1.9.20"
 #Hilt
-hiltVersion                    = "2.48"
-hiltCompilerVersion            = "2.48"
+hiltVersion                    = "2.48.1"
+hiltCompilerVersion            = "2.48.1"
 #GUI
 appCompatVersion               = "1.6.1"
-materialVersion                = "1.9.0"
+materialVersion                = "1.10.0"
 constraintLayoutVersion        = "2.1.4"
-activityktxVersion             = "1.7.2"
-navFragmentVersion             = "2.7.3"
-navUIVersion                   = "2.7.3"
+activityktxVersion             = "1.8.0"
+navFragmentVersion             = "2.7.5"
+navUIVersion                   = "2.7.5"
 lottieVersion                  = "6.1.0"
 #Glide
 glideVersion                   = "4.16.0"

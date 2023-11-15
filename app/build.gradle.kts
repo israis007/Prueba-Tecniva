@@ -93,6 +93,9 @@ dependencies {
     implementation(libs.livedata)
     implementation(libs.viewModel)
     implementation(libs.work)
+    //Room
+    implementation(libs.room)
+    ksp(libs.roomCompiler)
     //Tests
     testImplementation(libs.junit)
     androidTestImplementation(libs.extJunit)

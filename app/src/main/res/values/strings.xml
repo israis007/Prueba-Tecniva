@@ -16,4 +16,5 @@
     <string name="yes">Si</string>
     <string name="not">No</string>
     <string name="search">Buscar...</string>
+    <string name="database_name">BaseLocal</string>
 </resources>

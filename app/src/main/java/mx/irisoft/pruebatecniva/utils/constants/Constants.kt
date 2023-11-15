@@ -19,3 +19,4 @@ const val PAGE = "page"
 //Constants Hilt provider MDBApi
 const val CLIENT_MDB            = "clientMDB"
 const val RETROFIT_MDB          = "retrofitMDB"
+const val LANGUAGE_MDB          = "es-MX"

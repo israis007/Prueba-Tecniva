@@ -4,6 +4,7 @@ import mx.irisoft.pruebatecniva.data.remote.model.responses.PopularMoviesRespons
 import mx.irisoft.pruebatecniva.data.remote.model.responses.PopularPersonsResponse
 import mx.irisoft.pruebatecniva.data.remote.providers.MDBApiProvider
 import mx.irisoft.pruebatecniva.data.remote.state.Resource
+import mx.irisoft.pruebatecniva.utils.constants.LANGUAGE_MDB
 import mx.irisoft.pruebatecniva.utils.constants.RETROFIT_MDB
 import retrofit2.Retrofit
 import javax.inject.Inject
@@ -15,7 +16,7 @@ class MDBRepository @Inject constructor(
 ) {
 
     suspend fun getMovies(
-        language: String,
+        language: String = LANGUAGE_MDB,
         page: Int,
         response: (popularMoviesResponse: Resource<PopularMoviesResponse>) -> Unit
     ) {
@@ -32,7 +33,7 @@ class MDBRepository @Inject constructor(
     }
 
     suspend fun getPopularPerson(
-        language: String,
+        language: String = LANGUAGE_MDB,
         page: Int,
         response: (popularPersonsResponse: Resource<PopularPersonsResponse>) -> Unit
     ){

@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import mx.irisoft.pruebatecniva.BuildConfig
 import mx.irisoft.pruebatecniva.R
 import mx.irisoft.pruebatecniva.data.remote.datasource.KnowFor
 import mx.irisoft.pruebatecniva.databinding.DialogImageBinding
@@ -137,12 +136,12 @@ abstract class ActivityBase : AppCompatActivity() {
 
         with(binding){
             itemActvTitle.text = knowFor.title
-            itemAdultName.text = getString(if (knowFor.adult) R.string.yes else R.string.not)
-            itemOriginalLanguage.text = knowFor.original_language
-            itemOriginalTitle.text = knowFor.original_title
-            itemActvReleaseDate.text = knowFor.release_date
-            itemActvRating.text = knowFor.vote_average.toString()
-            itemActvVotes.text = knowFor.vote_count.toString()
+            itemAdultName.text = getString(if (knowFor.isAdult) R.string.yes else R.string.not)
+            itemOriginalLanguage.text = knowFor.originalLanguage
+            itemOriginalTitle.text = knowFor.originalTitle
+            itemActvReleaseDate.text = knowFor.releaseDate
+            itemActvRating.text = knowFor.voteAverage.toString()
+            itemActvVotes.text = knowFor.voteCount.toString()
             itemActvReview.text = knowFor.overview
         }
 
