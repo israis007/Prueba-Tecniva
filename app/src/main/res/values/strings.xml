@@ -23,7 +23,6 @@
     <string name="database_name">BaseLocal</string>
 
     <!-- People Dialog -->
-    <string name="no_internet">No hay conexión a Internet</string>
     <string name="item_label_name">Nombre:</string>
     <string name="item_label_description">Reseña:</string>
     <string name="item_label_original_title">Título Original:</string>
@@ -34,10 +33,19 @@
     <string name="item_label_movies">Participaciones:</string>
     <string name="item_chip_favorites">Agregar Favoritos</string>
 
+    <!-- Favorite Card -->
+    <string name="item_chip_favorites_delete">Eliminar de Favoritos</string>
+    <string name="item_label_fav_name">Nombre:</string>
+    <string name="item_label_fav_description">Reseña:</string>
+    <string name="item_label_fav_original_title">Usuario:</string>
+    <string name="item_label_fav_release_date">Fecha que se agregó a fav:</string>
+
     <!-- Toast Messages -->
     <string name="toast_movie_added">Película: %1$s está en fav.</string>
+    <string name="toast_movie_deleted">Película: %1$s se removió de fav.</string>
 
     <!-- Generic-->
+    <string name="no_internet">No hay conexión a Internet</string>
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
     <string name="no_data">Sin Título</string>

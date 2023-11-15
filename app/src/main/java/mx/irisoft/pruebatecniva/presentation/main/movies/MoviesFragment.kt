@@ -30,7 +30,7 @@ class MoviesFragment : FragmentBase() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentMoviesBinding.inflate(inflater, container, false)
         return binding.root
@@ -56,12 +56,13 @@ class MoviesFragment : FragmentBase() {
             responseMovies.observe(viewLifecycleOwner) {
                 val resource = it ?: return@observe
                 activity.showLoading(false)
-                when(resource.statusType) {
+                when (resource.statusType) {
                     StatusType.SUCCESS -> {
                         resource.data?.let { data ->
                             nextPage++
-                            if (nextPage > data.totalPages)
+                            if (nextPage > data.totalPages) {
                                 limit = true
+                            }
                             adapter.addItemsAfter(data.results)
                         }
                     }
@@ -80,14 +81,16 @@ class MoviesFragment : FragmentBase() {
 
     override fun initViewComponents() {
         activity = requireActivity() as MainActivity
-        adapter = MoviesAdapter(arrayListOf(),
+        adapter = MoviesAdapter(
+            arrayListOf(),
             onTouchItem = { imagePath ->
                 activity.showImageMessage(imagePath)
             },
             onFavoriteClick = { movie ->
                 viewModel.addMovieToFavorites(movie)
                 activity.showToastMessage(String.format(getString(R.string.toast_movie_added), movie.title))
-            })
+            },
+        )
     }
 
     override fun onDestroyView() {

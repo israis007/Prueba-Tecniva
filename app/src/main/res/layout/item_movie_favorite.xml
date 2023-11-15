@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_beer_cv_parentLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:background="@drawable/round_corners">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/item_aciv_banner"
+            style="@style/Banner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_actv_name_label"
+            style="@style/LabelTitle"
+            android:text="@string/item_label_fav_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_aciv_banner"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_actv_name"
+            style="@style/LabelContent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_aciv_banner"
+            app:layout_constraintTop_toBottomOf="@id/item_actv_name_label"
+            tools:text="3 - D Man" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_actv_original_title_label"
+            style="@style/LabelTitle"
+            android:text="@string/item_label_fav_original_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_aciv_banner"
+            app:layout_constraintTop_toBottomOf="@id/item_actv_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_actv_original_title"
+            style="@style/LabelContent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_aciv_banner"
+            app:layout_constraintTop_toBottomOf="@id/item_actv_original_title_label"
+            tools:text="título original" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_actv_description_label"
+            style="@style/LabelTitle"
+            android:text="@string/item_label_fav_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_aciv_banner"
+            app:layout_constraintTop_toBottomOf="@id/item_actv_original_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_actv_description"
+            style="@style/LabelContent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_aciv_banner"
+            app:layout_constraintTop_toBottomOf="@id/item_actv_description_label"
+            tools:text="No se que lleve aqui" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_actv_release_date_label"
+            style="@style/LabelTitle"
+            android:text="@string/item_label_fav_release_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_aciv_banner"
+            app:layout_constraintTop_toBottomOf="@id/item_actv_description" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_actv_release_date"
+            style="@style/LabelContent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_aciv_banner"
+            app:layout_constraintTop_toBottomOf="@id/item_actv_release_date_label"
+            tools:text="2022-01-05" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/item_cg_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            android:layout_marginEnd="@dimen/dimen_14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_aciv_banner"
+            app:layout_constraintTop_toBottomOf="@id/item_actv_release_date">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/item_chip_series"
+                style="@style/ChipInverted"
+                android:text="@string/item_chip_favorites_delete"
+                />
+
+        </com.google.android.material.chip.ChipGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

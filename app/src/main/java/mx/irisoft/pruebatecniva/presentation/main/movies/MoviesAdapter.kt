@@ -7,15 +7,15 @@ import mx.irisoft.pruebatecniva.databinding.ItemMovieBinding
 import mx.irisoft.pruebatecniva.domain.models.PopularMovieItemModel
 import mx.irisoft.pruebatecniva.utils.extensions.Extensions.updateImage
 
-class MoviesAdapter (
+class MoviesAdapter(
     private val list: ArrayList<PopularMovieItemModel>,
     private val onTouchItem: (path: String) -> Unit,
-    private val onFavoriteClick: (PopularMovieItemModel) -> Unit
-): RecyclerView.Adapter<MoviesAdapter.ResultItem>() {
+    private val onFavoriteClick: (PopularMovieItemModel) -> Unit,
+) : RecyclerView.Adapter<MoviesAdapter.ResultItem>() {
 
     inner class ResultItem(private val pictureBinding: ItemMovieBinding) : RecyclerView.ViewHolder(pictureBinding.root) {
-        fun setData(item: PopularMovieItemModel){
-            with(pictureBinding){
+        fun setData(item: PopularMovieItemModel) {
+            with(pictureBinding) {
                 itemActvName.text = item.title
                 itemActvOriginalTitle.text = item.originalTitle
                 itemActvDescription.text = item.description
