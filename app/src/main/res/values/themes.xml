@@ -79,7 +79,7 @@
 
     <style name="Banner">
         <item name="android:layout_height">@dimen/banner_height</item>
-        <item name="android:layout_width">@dimen/banner_witdh</item>
+        <item name="android:layout_width">@dimen/banner_width</item>
         <item name="android:scaleType">fitXY</item>
     </style>
 </resources>

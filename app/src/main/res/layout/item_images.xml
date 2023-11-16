@@ -15,8 +15,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/aiv_image"
-            android:layout_width="@dimen/banner_witdh"
-            android:layout_height="@dimen/banner_witdh" />
+            android:layout_width="@dimen/banner_width"
+            android:layout_height="@dimen/banner_width" />
 
     </com.google.android.material.card.MaterialCardView>
 </layout>

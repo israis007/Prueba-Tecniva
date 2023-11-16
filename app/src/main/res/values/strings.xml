@@ -20,6 +20,7 @@
     <string name="dialog_movies_rating">Popularidad:</string>
     <string name="dialog_movies_vote">Votos:</string>
     <string name="search">Buscar...</string>
+    <string name="filter">Filtrar...</string>
     <string name="database_name">BaseLocal</string>
 
     <!-- People Dialog -->
@@ -43,6 +44,12 @@
     <!-- Toast Messages -->
     <string name="toast_movie_added">Película: %1$s está en fav.</string>
     <string name="toast_movie_deleted">Película: %1$s se removió de fav.</string>
+
+    <!-- Filter Dialog -->
+    <string name="filter_title">Elije un filtro</string>
+    <string name="filter_option_title">Título</string>
+    <string name="filter_option_content">Contenido</string>
+    <string name="filter_option_author">Autor</string>
 
     <!-- Generic-->
     <string name="no_internet">No hay conexión a Internet</string>

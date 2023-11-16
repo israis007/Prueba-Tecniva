@@ -1,14 +1,24 @@
 package mx.irisoft.pruebatecniva.presentation.main.moviesfavorites
 
+import android.graphics.ColorFilter
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
+import androidx.core.view.size
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import mx.irisoft.pruebatecniva.R
 import mx.irisoft.pruebatecniva.databinding.FragmentMoviesFavoritesBinding
+import mx.irisoft.pruebatecniva.domain.enums.SearchType
 import mx.irisoft.pruebatecniva.domain.models.MovieModel
 import mx.irisoft.pruebatecniva.presentation.base.FragmentBase
 import mx.irisoft.pruebatecniva.presentation.main.MainActivity
@@ -25,6 +35,7 @@ class MoviesFavoritesFragment : FragmentBase() {
     private val viewModel: MoviesFavoritesViewModel by viewModels()
     private lateinit var activity: MainActivity
     private lateinit var adapter: MoviesFavoritesAdapter
+    private var lastSearchType = SearchType.TITLE
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,6 +43,7 @@ class MoviesFavoritesFragment : FragmentBase() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentMoviesFavoritesBinding.inflate(inflater, container, false)
+        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -40,19 +52,47 @@ class MoviesFavoritesFragment : FragmentBase() {
         viewModel.getAllMoviesLocal()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_search, menu)
+        for (i in 0 until menu.size) {
+            val drawable = menu.getItem(i).icon
+            drawable?.let{
+                it.mutate()
+                it.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(requireContext(), R.color.white), PorterDuff.Mode.SRC_ATOP)
+            }
+        }
+
+        val searchItem = menu.findItem(R.id.action_search)
+        val searchView = searchItem?.actionView as SearchView
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                // Realizar búsqueda
+                viewModel.searchmovie(query ?: "", lastSearchType)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                // Actualizar búsqueda en tiempo real
+                return true
+            }
+        })
+
+        val filterItem = menu.findItem(R.id.action_filter)
+        filterItem?.setOnMenuItemClickListener {
+            activity.mostrarDialogoFiltro(false) {
+                lastSearchType = it
+            }
+            true
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun setListeners() {
         with(binding) {
-            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    // Se realiza la búsqueda
-                    viewModel.searchmovie(query ?: "")
-                    return true
-                }
-
-                override fun onQueryTextChange(newText: String?): Boolean {
-                    return true
-                }
-            })
         }
     }
 
