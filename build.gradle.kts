@@ -7,4 +7,5 @@ plugins {
     alias(libs.plugins.crashlyticsPlugin) apply false
     alias(libs.plugins.performance) apply false
     alias(libs.plugins.hiltPlugin) apply false
+    alias(libs.plugins.libraryAndroid) apply false
 }

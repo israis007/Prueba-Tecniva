@@ -8,12 +8,12 @@ import mx.irisoft.pruebatecniva.domain.models.PopularPersonsModel
 import javax.inject.Inject
 
 class GetPopularPersonsUseCase @Inject constructor(
-    private val mdbRepository: MDBRepository
+    private val mdbRepository: MDBRepository,
 ) {
 
     suspend operator fun invoke(
         page: Int,
-        response: (listMovies: Resource<PopularPersonsModel?>) -> Unit
+        response: (listMovies: Resource<PopularPersonsModel?>) -> Unit,
     ) =
         mdbRepository.getPopularPerson(page = page) { resource ->
             response(
@@ -21,8 +21,7 @@ class GetPopularPersonsUseCase @Inject constructor(
                     StatusType.SUCCESS -> Resource.success(resource.data?.map())
                     StatusType.ERROR -> Resource.error(resource.message)
                     StatusType.LOADING -> Resource.loading()
-                }
+                },
             )
         }
-
 }

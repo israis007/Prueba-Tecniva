@@ -51,6 +51,10 @@
     <string name="filter_option_content">Contenido</string>
     <string name="filter_option_author">Autor</string>
 
+    <!-- Errors -->
+    <string name="err_missing_permissions">No contamos con permisos para acceder a tu galeria, por favor otorga permisos, para continuar</string>
+    <string name="err_no_image_choose">Canceló la selección de imagen</string>
+
     <!-- Generic-->
     <string name="no_internet">No hay conexión a Internet</string>
     <string name="male">Hombre</string>
@@ -59,5 +63,8 @@
     <string name="not">No</string>
     <string name="yes">Yes</string>
     <string name="content_desc">Icons</string>
+    <string name="permission_request">Pidiendo permiso...</string>
+    <string name="permission_granted">Permisos otorgados...</string>
+    <string name="ucrop_title">Edita la imagen...</string>
     <string name="image_picker_folder_name">AppTestImages</string>
 </resources>

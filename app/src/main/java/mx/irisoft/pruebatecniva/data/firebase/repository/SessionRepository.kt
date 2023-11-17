@@ -8,7 +8,7 @@ import mx.irisoft.pruebatecniva.data.remote.state.Resource
 import javax.inject.Inject
 
 class SessionRepository @Inject constructor(
-    private val authProvider: SessionProvider
+    private val authProvider: SessionProvider,
 ) {
 
     suspend fun login(isLogin: (login: Resource<Boolean>) -> Unit) = withContext(Dispatchers.IO) {
@@ -20,5 +20,4 @@ class SessionRepository @Inject constructor(
                 isLogin(Resource.error(fail.message ?: "Error al iniciar sesión"))
             }
     }
-
 }

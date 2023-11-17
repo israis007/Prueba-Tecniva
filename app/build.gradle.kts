@@ -72,7 +72,6 @@ android {
 }
 
 dependencies {
-
     //Core
     implementation(libs.androidxKtx)
     implementation(libs.multidex)
@@ -104,6 +103,8 @@ dependencies {
     //Glide
     implementation(libs.glide)
     ksp(libs.glideCompiler)
+    // Ucrop
+    implementation(libs.ucrop)
     //lifecycle
     implementation(libs.livedata)
     implementation(libs.viewModel)

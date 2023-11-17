@@ -9,28 +9,31 @@ import mx.irisoft.pruebatecniva.utils.extensions.Extensions.convertToByteArray
 import javax.inject.Inject
 
 class StorageRepository @Inject constructor(
-    private val storage: StorageProvider
+    private val storage: StorageProvider,
 ) {
 
-    suspend fun uploadImage(uri: Uri?, response: (name: Resource<String>) -> Unit) = withContext(Dispatchers.IO) {
-        response(Resource.loading())
+    suspend fun uploadImage(uri: Uri?, response: (name: Resource<String>, total: Long, progress: Long) -> Unit) = withContext(Dispatchers.IO) {
+        response(Resource.loading(), 0, 0)
         try {
             val bytes = uri?.convertToByteArray()
             val name = uri?.toString()?.substringAfterLast('/')
-            if (bytes != null && !name.isNullOrEmpty()){
+            if (bytes != null && !name.isNullOrEmpty()) {
                 storage.getStorageImages().child(name)
                     .putBytes(bytes)
                     .addOnCompleteListener { complete ->
-                        if (complete.isSuccessful)
-                            response(Resource.success(name))
-                        else
-                            response(Resource.error("Error al subir la imagen, intente más tarde"))
+                        if (complete.isSuccessful) {
+                            response(Resource.success(name), 0, 0)
+                        } else {
+                            response(Resource.error("Error al subir la imagen, intente más tarde"), 0, 0)
+                        }
                     }.addOnFailureListener { fail ->
-                        response(Resource.error(fail.message ?: "Error al subir la imagen, intente más tarde"))
+                        response(Resource.error(fail.message ?: "Error al subir la imagen, intente más tarde"), 0, 0)
+                    }.addOnProgressListener { upload ->
+                        response(Resource.loading(), upload.totalByteCount, upload.bytesTransferred)
                     }
             }
-        } catch (e: Exception){
-            response(Resource.error("No se pudo subir la imagen, intente más tarde..."))
+        } catch (e: Exception) {
+            response(Resource.error("No se pudo subir la imagen, intente más tarde..."), 0, 0)
         }
     }
 
@@ -38,14 +41,15 @@ class StorageRepository @Inject constructor(
         response(Resource.loading())
         try {
             storage.getStorageImages().child(nameFile).downloadUrl.addOnCompleteListener { task ->
-                if (task.isSuccessful)
+                if (task.isSuccessful) {
                     response(Resource.success(task.result.toString()))
-                else
+                } else {
                     response(Resource.error("Error al obtener la url de la imagen"))
+                }
             }.addOnFailureListener { fail ->
                 response(Resource.error(fail.message ?: "Error al obtener la url de la imagen"))
             }
-        } catch (e: Exception){
+        } catch (e: Exception) {
             response(Resource.error("Error al obtener la url de la imagen"))
         }
     }
@@ -60,14 +64,14 @@ class StorageRepository @Inject constructor(
                         array.add(it.name)
                     }
                     response(Resource.success(array.toList()))
-                } else
+                } else {
                     response(Resource.error("Error al obtener la lista de imágenes"))
+                }
             }.addOnFailureListener { fail ->
                 response(Resource.error(fail.message ?: "Error al obtener la lista de imágenes"))
             }
-        } catch (e: Exception){
+        } catch (e: Exception) {
             response(Resource.error("Error al obtener la lista de imágenes"))
         }
     }
-
 }
