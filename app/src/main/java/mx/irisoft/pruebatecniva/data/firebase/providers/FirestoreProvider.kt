@@ -14,6 +14,6 @@ class FirestoreProvider {
 
     @Provides
     @Singleton
-    fun getStorageImages() =
+    fun getStorageNotes() =
         FirebaseFirestore.getInstance().collection(COLLECTION_STORAGE)
 }

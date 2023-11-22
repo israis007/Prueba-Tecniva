@@ -36,7 +36,7 @@ class MoviesRepository @Inject constructor(
         }
 
     suspend fun searchByContent(content: String) =
-        movieLocalDao.getMoviesByContent("%content%").map { item ->
+        movieLocalDao.getMoviesByContent("%$content%").map { item ->
             item.map()
         }
 }

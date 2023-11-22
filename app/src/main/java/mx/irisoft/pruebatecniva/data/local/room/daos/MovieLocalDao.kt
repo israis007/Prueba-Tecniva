@@ -19,15 +19,15 @@ interface MovieLocalDao {
     @Update
     suspend fun updateMovieLocal(movieLocal: MovieLocal)
 
-    @Query( "SELECT * FROM MovieLocal")
+    @Query("SELECT * FROM MovieLocal")
     suspend fun getAllMovies(): List<MovieLocal>
 
-    @Query( "SELECT * FROM MovieLocal WHERE title LIKE :title")
+    @Query("SELECT * FROM MovieLocal WHERE title LIKE :title")
     suspend fun getMoviesByTitle(title: String): List<MovieLocal>
 
-    @Query( "SELECT * FROM MovieLocal WHERE content LIKE :content")
+    @Query("SELECT * FROM MovieLocal WHERE content LIKE :content")
     suspend fun getMoviesByContent(content: String): List<MovieLocal>
 
-    @Query( "SELECT * FROM MovieLocal WHERE author LIKE :author")
+    @Query("SELECT * FROM MovieLocal WHERE author LIKE :author")
     suspend fun getMoviesByAuthor(author: String): List<MovieLocal>
 }
