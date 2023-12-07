@@ -115,9 +115,6 @@ class MoviesFavoritesFragment : FragmentBase() {
 
     private fun createAdapter(list: List<MovieModel>) {
         adapter = MoviesFavoritesAdapter(
-            ArrayList<MovieModel>().apply {
-                addAll(list)
-            },
             onTouchItem = { pathImage ->
                 activity.showImageMessage(pathImage)
             },
@@ -127,7 +124,7 @@ class MoviesFavoritesFragment : FragmentBase() {
             },
         )
         binding.actRv.adapter = adapter
-        binding.actRv.adapter?.notifyDataSetChanged()
+        adapter.submitList(list)
     }
     override fun onDestroyView() {
         super.onDestroyView()
