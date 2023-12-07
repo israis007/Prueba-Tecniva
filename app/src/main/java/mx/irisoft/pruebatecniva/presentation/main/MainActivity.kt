@@ -50,7 +50,7 @@ class MainActivity : ActivityBase() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val splashScreen = installSplashScreen()
+        this@MainActivity.installSplashScreen()
 
         setContentView(binding.root)
         // Adding more permissions
