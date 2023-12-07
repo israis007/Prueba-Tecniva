@@ -21,7 +21,6 @@ import javax.inject.Inject
 import javax.inject.Named
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
 class MDBApiProvider @Inject constructor() {
@@ -31,8 +30,8 @@ class MDBApiProvider @Inject constructor() {
             Gson().newBuilder()
                 .serializeNulls()
                 .setDateFormat(
-                    BuildConfig.DATE_FORMAT
-                ).create()
+                    BuildConfig.DATE_FORMAT,
+                ).create(),
         )
     }
 
@@ -46,22 +45,24 @@ class MDBApiProvider @Inject constructor() {
     @Singleton
     @Named(CLIENT_MDB)
     fun okHttpClient(): OkHttpClient =
-        OkHttpClient.Builder()
-            .addInterceptor(logInterceptor)
-            .addInterceptor(NetworkAvailableInterceptor())
-            .callTimeout(
-                BuildConfig.TIMEOUT_SECONDS,
-                TimeUnit.SECONDS
-            )
-            .readTimeout(
-                BuildConfig.TIMEOUT_SECONDS,
-                TimeUnit.SECONDS
-            )
-            .connectTimeout(
-                BuildConfig.TIMEOUT_SECONDS,
-                TimeUnit.SECONDS
-            )
-            .build()
+        OkHttpClient.Builder().apply {
+            addInterceptor(NetworkAvailableInterceptor())
+                .callTimeout(
+                    BuildConfig.TIMEOUT_SECONDS,
+                    TimeUnit.SECONDS,
+                )
+                .readTimeout(
+                    BuildConfig.TIMEOUT_SECONDS,
+                    TimeUnit.SECONDS,
+                )
+                .connectTimeout(
+                    BuildConfig.TIMEOUT_SECONDS,
+                    TimeUnit.SECONDS,
+                )
+            if (BuildConfig.DEBUG) {
+                addInterceptor(logInterceptor)
+            }
+        }.build()
 
     @Provides
     @Singleton

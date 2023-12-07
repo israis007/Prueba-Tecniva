@@ -45,6 +45,8 @@ roomCompilerVersion            = "2.6.0"
 junitVersion                   = "4.13.2"
 espressoVersion                = "3.5.1"
 extJunitVersion                = "1.1.5"
+#splashScreen
+splashScreenVersion            = "1.0.0-beta02"
 #plugins
 gradleVersion                  = "8.1.4"
 kotlinVersion                  = "1.9.0"
@@ -98,6 +100,8 @@ firePerformance         = { group = "com.google.firebase",          name = "fire
 #room
 room                    = { group = "androidx.room",                name = "room-ktx",                                  version.ref = "roomVersion" }
 roomCompiler            = { group = "androidx.room",                name = "room-compiler",                             version.ref = "roomCompilerVersion" }
+#splashscreen
+splashScreen            = { group ="androidx.core",                 name = "core-splashscreen",                         version.ref = "splashScreenVersion" }
 #testing
 junit                   = { group = "junit",                        name = "junit",                                     version.ref = "junitVersion" }
 extJunit                = { group = "androidx.test.ext",            name = "junit",                                     version.ref = "extJunitVersion" }

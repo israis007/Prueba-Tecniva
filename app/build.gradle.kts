@@ -105,6 +105,8 @@ dependencies {
     ksp(libs.glideCompiler)
     // Ucrop
     implementation(libs.ucrop)
+    // Splash
+    implementation(libs.splashScreen)
     //lifecycle
     implementation(libs.livedata)
     implementation(libs.viewModel)

@@ -1,6 +1,8 @@
 package mx.irisoft.pruebatecniva.presentation.main.movies
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -64,6 +66,12 @@ class MoviesFragment : FragmentBase() {
                                 limit = true
                             }
                             adapter.addItemsAfter(data.results)
+                            Handler(Looper.getMainLooper()).postDelayed(
+                                {
+                                    viewModel.getPopularMovies(nextPage)
+                                },
+                                5000L,
+                            )
                         }
                     }
                     StatusType.ERROR -> activity.showInfoMessage(getString(R.string.title_error), resource.message)
